@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Defining_Classes_Exercise.todo_list_9.project.section.project" />
+          <option value="Classes_Instances_Exercise.library_7.project.user.Library" />
+          <option value="Attributes_Methods_Exercise.movie_world_2.project.movie_world.Customer" />
+          <option value="Polymorphism_Exercise.wild_farm_4.project.animals.mammals.Mammal" />
+          <option value="Testing_Exercise.test_Groups_2.Person" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
