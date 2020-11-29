@@ -1,4 +1,4 @@
 from django.contrib import admin
-from travel_app.models import Destinations
+from travel_app.models import Destination
 
-admin.register(Destinations)
+admin.site.register(Destination)
