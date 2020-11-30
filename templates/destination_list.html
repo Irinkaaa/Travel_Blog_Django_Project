@@ -3,26 +3,34 @@
     {% load bootstrap4 %}
     <h1 class="text-center">All Travel Stories</h1>
     <hr>
-    {% if destinations %}
-        <div class="row">
-            {% for dest in destinations %}
-                <div class="col-sm-3">
-                    <div class="card m-3" style="width: 18rem;">
-                        <img src="{{ dest.image.url }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ dest.title }}</h5>
-                            <p class="card-text">{{ dest.country }}, {{ dest.year }}</p>
-                            <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">See
-                                details</a>
+    {% if user.is_authenticated %}
+        {% if destinations %}
+            <div class="row">
+                {% for dest in destinations %}
+                    <div class="col-sm-3">
+                        <div class="card m-3" style="width: 18rem;">
+                            <img src="{{ dest.image.url }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ dest.title }}</h5>
+                                <p class="card-text">{{ dest.country }}, {{ dest.year }}</p>
+                                <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">See
+                                    details</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h3 class="text-center">There are no stories yet. Be the first one to share!</h3>
+            <div class="col text-center">
+                <a href="{% url 'destination create' %}" class="btn btn-outline-secondary">Create</a>
+            </div>
+        {% endif %}
     {% else %}
-        <h3 class="text-center">There are no stories yet. Be the first one to share!</h3>
+        <h3 class="text-center">Please sing up or sign in if you have a profile already,</h3>
+        <h3 class="text-center">to view all travel stories.</h3>
         <div class="col text-center">
-            <a href="{% url 'destination create' %}" class="btn btn-outline-secondary">Create</a>
+            <a href="{% url 'signup user' %}" class="btn btn-outline-secondary">Sign Up</a> / <a href="{% url 'signin user' %}" class="btn btn-outline-secondary">Sign In</a>
         </div>
     {% endif %}
 {% endblock %}
