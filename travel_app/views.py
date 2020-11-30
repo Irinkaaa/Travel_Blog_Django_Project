@@ -3,13 +3,17 @@ from travel_app.models import Destination
 
 
 def index(request):
+    return render(request, 'index.html')
+
+
+def destination_list(request):
     context = {
         'destinations': Destination.objects.all(),
     }
-    return render(request, 'index.html', context)
+    return render(request, 'destination_list.html', context)
 
 
-def destination_details(request):
+def destination_details(request, pk):
     pass
 
 

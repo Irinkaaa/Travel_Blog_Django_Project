@@ -1,11 +1,17 @@
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from accounts.forms import SigninForm, SignupForm, ProfileForm
 
 
-def user_profile(request):
-    context = {}
+def user_profile(request, pk=None):
+    user = request.user if pk is None else User.objects.get(pk=pk)
+    context = {
+        'user': user,
+        'profile': user.userprofile,
+        'form': ProfileForm(),
+    }
     return render(request, 'profile.html', context)
 
 

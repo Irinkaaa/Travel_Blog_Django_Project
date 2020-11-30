@@ -1,5 +1,29 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-    <h1>This is User profile page.</h1>
-{% load bootstrap4 %}
+    <div class="text-center">
+        <h1>Hi, {{ user.username }}!</h1>
+        <h5>This is your profile</h5>
+        {% if user.userprofile.profile_image %}
+            <img class="rounded-circle mb-3" src="{{ user.userprofile.profile_image.url }}"
+                 alt="Generic placeholder image"
+                 width="140"
+                 height="140">
+        {% else %}
+            <img class="rounded-circle mb-3"
+                 src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                 alt="Generic placeholder image"
+                 width="140"
+                 height="140">
+        {% endif %}
+        <div class="w-50 m-auto">
+            <form action="{% url 'current user profile' %}" method="post" enctype="multipart/form-data">
+                {{ form }}
+                {% csrf_token %}
+                <button class="btn btn-outline-secondary">Upload</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+
+    {% load bootstrap4 %}
 {% endblock %}

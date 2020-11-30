@@ -1187,6 +1187,7 @@ sequence|table|26031|26033|1
     </table>
     <table id="76" parent="41" name="travel_app_destination">
       <ObjectId>26033</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>2009</StateNumber>
     </table>
