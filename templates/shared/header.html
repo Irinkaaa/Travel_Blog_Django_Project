@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light" style="background-color: #3bd1b3 " >
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #3bd1b3 ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,14 +15,24 @@
                 <a class="nav-link" href="#">Add New Story</a>
             </li>
         </ul>
+        {% if user.is_authenticated %}
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign In</a>
+                    <a class="nav-link" href="{% url 'current user profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign Up</a>
+                    <a class="nav-link" href="{% url 'signout user' %}">Sign Out</a>
                 </li>
             </ul>
-        </ul>
+        {% else %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signin user' %}">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup user' %}">Sign Up</a>
+                </li>
+            </ul>
+        {% endif %}
     </div>
 </nav>
