@@ -15,6 +15,7 @@ def destination_create(request):
         if form.is_valid():
             form.save()
             return redirect('destination list')
+
         context = {
             'form': form,
         }
