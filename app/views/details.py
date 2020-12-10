@@ -11,4 +11,4 @@ def destination_details(request, pk):
         'destination': destination,
         'form': DestinationFrom(instance=destination),
     }
-    return render(request, 'app/destination_delete.html', context)
+    return render(request, 'app/destination_details.html', context)

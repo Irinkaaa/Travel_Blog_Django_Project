@@ -4,8 +4,8 @@ from app.models import Destination
 
 def destination_list(request):
     destinations = Destination.objects.all()
-    # for dest in destinations:
-    #     dest.can_delete = dest.created_by_id == request.user_id
+    for dest in destinations:
+        dest.can_delete = dest.user_id == request.user.id
     context = {
         'destinations': destinations,
     }

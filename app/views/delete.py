@@ -3,7 +3,7 @@ from app.forms.delete import DeleteDestinationForm
 from app.models import Destination
 
 
-def destination_delete(request):
+def destination_delete(request, pk):
     destination = Destination.objects.get(pk=pk)
     if request.method == 'GET':
         context = {

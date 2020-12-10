@@ -1,5 +1,20 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-{% load bootstrap4 %}
-
+    {% load bootstrap4 %}
+    <h1 class="text-center">Are you sure?</h1>
+    <hr>
+    <div class="raw d-flex justify-content-center">
+        <div class="item">
+            <form method="POST" action="{% url 'destination delete' destination.id %}">
+                {% bootstrap_field form.title %}
+                {% bootstrap_field form.description %}
+                {% bootstrap_field form.country %}
+                {% bootstrap_field form.year %}
+                <div class="col text-center">
+                    <input type="submit" class="btn btn-danger" value="Yes"> / <a href="{% url 'destination list' %}" class="btn btn-success">No</a>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
 {% endblock %}

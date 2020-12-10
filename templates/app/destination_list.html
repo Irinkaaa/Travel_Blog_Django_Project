@@ -13,10 +13,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ dest.title }}</h5>
                                 <p class="card-text">{{ dest.country }}, {{ dest.year }}</p>
-                                <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">See
-                                    details</a>
+                                <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">View</a>
                                 {% if dest.can_delete %}
-                                    <button class="btn btn-outline-danger">Delete</button>
+                                    <a href="{% url 'destination delete' dest.id %}" class="btn btn-outline-danger">Delete</a>
                                 {% endif %}
                                 <p>Created by <a href="{% url 'user profile' user.id %}">{{ dest.user.username }}</a> </p>
                             </div>
