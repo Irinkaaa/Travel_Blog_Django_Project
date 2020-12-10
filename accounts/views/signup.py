@@ -1,10 +1,12 @@
 from django.contrib.auth import login
+from django.db import transaction
 from django.shortcuts import render, redirect
 
 from accounts.forms.profile import ProfileForm
 from accounts.forms.signup import SignupForm
 
 
+@transaction.atomic()
 def signup_user(request):
     if request.method == 'GET':
         context = {

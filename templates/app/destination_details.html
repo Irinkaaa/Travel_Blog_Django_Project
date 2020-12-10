@@ -1,5 +1,15 @@
 {% extends 'shared/base.html' %}
 {% block content %}
 {% load bootstrap4 %}
-
+<div class="card m-3" style="width: 18rem;">
+    <img class="card-img-top" src="{{ destination.image.url }}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ destination.title }}</h5>
+        <p class="card-text">{{ destination.description }}</p>
+    <a href="{%  url  'python details' python.id python.name %}">See more</a>
+        {% if python.can_delete %}
+            <button class="btn btn-danger">Delete</button>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
