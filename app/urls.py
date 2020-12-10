@@ -1,5 +1,10 @@
 from django.urls import path
-from travel_app.views import index, destination_list, destination_details, destination_edit, destination_delete, destination_create
+from app.views.create import destination_create
+from app.views.delete import destination_delete
+from app.views.details import destination_details
+from app.views.edit import destination_edit
+from app.views.index import index
+from app.views.list import destination_list
 
 urlpatterns = [
     path('', index, name='index'),

@@ -16,7 +16,7 @@
                 <a class="nav-link" href="{% url 'destination list' %}">Travel Stories</a>
             </li>
             <li>
-                <a class="nav-link" href="#">Add New Story</a>
+                <a class="nav-link" href="{% url 'destination create' %}">Add New Story</a>
             </li>
             {% if user.is_authenticated %}
                 <li class="nav-item">

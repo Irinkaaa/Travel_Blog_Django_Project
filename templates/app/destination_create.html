@@ -1,0 +1,16 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    {% load bootstrap4 %}
+    <div class="raw d-flex justify-content-center">
+        <form method="post" action="{% url 'destination create' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% bootstrap_field field %}
+            {% endfor %}
+            {% buttons %}
+                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            {% endbuttons %}
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from travel_app.models import Destination
+from app.models import Destination
 
 
 class DestinationFrom(forms.ModelForm):
