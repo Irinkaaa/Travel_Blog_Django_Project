@@ -13,4 +13,4 @@ def destination_delete(request, pk):
         return render(request, 'app/destination_delete.html', context)
     else:
         destination.delete()
-        return redirect('index')
+        return redirect('destination list')
