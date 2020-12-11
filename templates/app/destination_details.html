@@ -1,15 +1,18 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-{% load bootstrap4 %}
-<div class="card m-3" style="width: 18rem;">
-    <img class="card-img-top" src="{{ destination.image.url }}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{ destination.title }}</h5>
-        <p class="card-text">{{ destination.description }}</p>
-    <a href="{%  url  'python details' python.id python.name %}">See more</a>
-        {% if python.can_delete %}
-            <button class="btn btn-danger">Delete</button>
-        {% endif %}
+    {% load bootstrap4 %}
+    <div class="card m-5" style="width: 38rem;">
+        <img class="card-img-top" src="{{ destination.image.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ destination.title }}</h5>
+            <p class="card-text">{{ destination.country }}, {{ destination.year }}</p>
+            <p class="card-text">{{ destination.description }}</p>
+        </div>
+        <div class="card-img-bottom" style="margin-left: 10px; margin-bottom: 10px">
+            {% if destination.can_delete %}
+                <a href="{% url 'destination edit' destination.id %}" class="btn btn-outline-secondary">Edit</a>
+                <a href="{% url 'destination delete' destination.id %}" class="btn btn-outline-danger pull-right" style="margin-right: 20px">Delete</a>
+            {% endif %}
+        </div>
     </div>
-</div>
 {% endblock %}

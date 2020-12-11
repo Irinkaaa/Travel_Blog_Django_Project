@@ -7,6 +7,7 @@ from app.models import Destination
 @require_GET
 def destination_details(request, pk):
     destination = Destination.objects.get(pk=pk)
+    destination.can_delete = destination.user_id == request.user.id
     context = {
         'destination': destination,
         'form': DestinationFrom(instance=destination),
