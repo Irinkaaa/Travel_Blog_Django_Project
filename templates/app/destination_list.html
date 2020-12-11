@@ -18,8 +18,7 @@
                                 <div class="card-img-bottom" style="margin-left: 10px">
                                     <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">View
                                         Details</a>
-                                    <p>Created by <a
-                                            href="{% url 'user profile' user.id %}">{{ dest.user.username }}</a>
+                                    <p>Created by <a href="{% url 'user profile' dest.user.user_id %}">{{ dest.user.user.username }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -33,10 +32,15 @@
                 <footer class="blockquote-footer"><cite title="Source Title">Douglas Ivester</cite></footer>
             </blockquote>
         {% else %}
-            <h3 class="text-center">There are no stories yet. Be the first one to share!</h3>
+            <h3 class="text-center font-italic">There are no stories yet. Be the first one to share!</h3>
             <div class="col text-center">
                 <a href="{% url 'destination create' %}" class="btn btn-outline-secondary">Create</a>
             </div>
+            <hr>
+            <blockquote class="blockquote col text-center">
+                <p class="mb-0 font-italic">Never let you memories be greater than your dreams.</p>
+                <footer class="blockquote-footer"><cite title="Source Title">Douglas Ivester</cite></footer>
+            </blockquote>
         {% endif %}
     {% else %}
         <h5 class="text-center font-italic">Please sing up or sign in if you have a profile already,</h5>

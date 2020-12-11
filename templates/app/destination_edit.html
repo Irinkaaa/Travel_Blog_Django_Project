@@ -1,5 +1,31 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-{% load bootstrap4 %}
+    {% load bootstrap4 %}
+    <h1 class="text-center">Edit Travel Story</h1>
+    <hr>
+        <div class="raw d-flex justify-content-center">
+            <form method="post" action="{% url 'destination edit' destination.id %}" class="furniture-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_field form.title %}
+            {% bootstrap_field form.description %}
+            {% bootstrap_field form.country %}
+            {% bootstrap_field form.year %}
+            {% bootstrap_field form.user %}
+            <img id="img_preview" src="{{ destination.image.url }}" class="w-50 rounded mx-auto d-block" alt="...">
+                    {% bootstrap_field form.image %}
+            <script>
+                function updateImage() {
+                    var img = document.getElementById('img_preview');
+                    var url = this.value;
+                    img.src = url;
+                }
+
+                document.getElementById('img_input').addEventListener('input', updateImage);
+            </script>
+            {% buttons %}
+                <button type="submit" class="btn btn-outline-secondary">Edit</button>
+            {% endbuttons %}
+        </form>
+    </div>
 
 {% endblock %}

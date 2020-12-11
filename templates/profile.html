@@ -16,7 +16,7 @@
                  height="140">
         {% endif %}
         <div class="w-50 m-auto">
-            <a href="{% url 'edit profile' %}">Edit your profile</a>
+            <a href="{% url 'view profile' %}">View/Edit your profile</a>
         </div>
     </div>
     <hr>
@@ -43,7 +43,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="container-fluid" style="width: 90%">
-                    <h2 class="text-center">You have no stories yet. Create your first one below!</h2>
+                    <h2 class="text-center font-italic">You have no stories yet. Create your first one below!</h2>
                     <div class="col text-center">
                         <a href="{% url 'destination create' %}" class="btn btn-outline-secondary">Create</a>
                     </div>
