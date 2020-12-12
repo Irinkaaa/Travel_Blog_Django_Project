@@ -6,11 +6,12 @@ from app.models import Destination
 
 def profile(request, pk=None):
     user = request.user if pk is None else User.objects.get(pk=pk)
+    profile = user.profile
     destinations = Destination.objects.filter(user_id=user.id)
     if request.method == 'GET':
         context = {
             'user': user,
-            'profile': user.profile,
+            'profile': profile,
             'form': ProfileForm(),
             'destinations': destinations,
         }
