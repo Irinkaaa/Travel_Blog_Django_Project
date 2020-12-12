@@ -15,3 +15,6 @@ class Profile(models.Model):
         upload_to='profiles',
         blank=True,
     )
+
+    def __str__(self):
+        return self.user

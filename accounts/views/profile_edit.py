@@ -13,7 +13,6 @@ def view_profile(request):
             'profile_form': EditProfileForm(instance=profile),
         }
         return render(request, 'profile_edit.html', context)
-
     else:
         profile_form = EditProfileForm(request.POST, request.FILES, instance=profile)
         if profile_form.is_valid():

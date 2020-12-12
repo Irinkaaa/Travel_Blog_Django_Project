@@ -6,13 +6,51 @@
         <div class="card-body">
             <h5 class="card-title">{{ destination.title }}</h5>
             <p class="card-text">{{ destination.country }}, {{ destination.year }}</p>
+
+            {% if can_like %}
+                {% if not has_likes %}
+                    <a href="{% url 'destination likes' destination.id %}"><i class="fa fa-heart-o"
+                                                                              aria-hidden="true"></i></a>
+                {% else %}
+                    <a href="{% url 'destination likes' destination.id %}"><i class="fa fa-heart"
+                                                                              aria-hidden="true"></i></a>
+                {% endif %}
+            {% endif %}
+
+            <p class="mt-2">Likes: {{ destination.like_set.count }}</p>
             <p class="card-text">{{ destination.description }}</p>
         </div>
         <div class="card-img-bottom" style="margin-left: 10px; margin-bottom: 10px">
-            {% if destination.can_delete %}
+            {% if can_delete %}
                 <a href="{% url 'destination edit' destination.id %}" class="btn btn-outline-secondary">Edit</a>
-                <a href="{% url 'destination delete' destination.id %}" class="btn btn-outline-danger pull-right" style="margin-right: 20px">Delete</a>
+                <a href="{% url 'destination delete' destination.id %}" class="btn btn-outline-danger pull-right"
+                   style="margin-right: 20px">Delete</a>
             {% endif %}
         </div>
+    </div>
+    <div class="card m-5" style="background-color: #e4f8f2; padding:2%">
+        {% if destination.comment_set.exists %}
+            {% for comment in destination.comment_set.all %}
+                <div class="box">
+
+                    <h5><em>{{ comment.comment }}</em> - <a
+                            href="{% url 'user profile' comment.user.id %}">{{ comment.user.username }}</a></h5>
+                    <hr>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="box">
+                <h3>There are no comments for this story yet.</h3>
+            </div>
+        {% endif %}
+        {% if can_comment %}
+            <div class="box">
+                <form method="post" action="{% url 'destination details' destination.id %}">
+                    {{ comment_form }}
+                    {% csrf_token %}
+                    <button class="btn btn-outline-secondary mt-2" type="submit">Add comment</button>
+                </form>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

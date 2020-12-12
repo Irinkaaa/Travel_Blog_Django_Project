@@ -18,7 +18,7 @@
                                 <div class="card-img-bottom" style="margin-left: 10px">
                                     <a href="{% url 'destination details' dest.id %}" class="btn btn-outline-secondary">View
                                         Details</a>
-                                    <p>Created by <a href="{% url 'current user profile' %}">{{ dest.user.username }}</a>
+                                    <p>Created by <a href="{% url 'user profile' dest.user.id %}">{{ dest.user.username }}</a>
                                     </p>
                                 </div>
                             </div>
