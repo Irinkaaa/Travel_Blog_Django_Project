@@ -12,4 +12,3 @@ class DestinationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Destination, DestinationAdmin)
-

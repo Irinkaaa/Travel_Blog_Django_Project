@@ -5,14 +5,13 @@
     <hr>
     {% if user.is_authenticated %}
         <div class="raw d-flex justify-content-center">
-            <form method="post" class="furniture-form" enctype="multipart/form-data">
+            <form method="post" action="{% url 'destination create' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_field form.title %}
                 {% bootstrap_field form.description %}
                 {% bootstrap_field form.country %}
                 {% bootstrap_field form.year %}
                 {% bootstrap_field form.image %}
-                {% bootstrap_field form.user %}
                 {% buttons %}
                     <button type="submit" class="btn btn-outline-secondary">Submit</button>
                 {% endbuttons %}

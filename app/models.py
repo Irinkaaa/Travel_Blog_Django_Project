@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from app.validators import year_validator
+
 UserModel = get_user_model()
 
 
@@ -8,11 +10,15 @@ class Destination(models.Model):
     title = models.CharField(max_length=50, blank=False)
     description = models.TextField(blank=False)
     country = models.CharField(max_length=50, blank=False)
-    year = models.IntegerField(blank=False)
-    image = models.ImageField(
-        upload_to='destinations',
-    )
-    user = models.ForeignKey(UserModel, on_delete=models.CASCADE)
+    year = models.IntegerField(
+        blank=False,
+        validators=(year_validator,))
+
+    image = models.ImageField(upload_to='destinations')
+    user = models.ForeignKey(
+        UserModel,
+        editable=False,
+        on_delete=models.CASCADE)
 
 
 class Like(models.Model):

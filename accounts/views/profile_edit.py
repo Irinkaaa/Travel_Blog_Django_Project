@@ -15,9 +15,10 @@ def view_profile(request):
         return render(request, 'profile_edit.html', context)
     else:
         profile_form = EditProfileForm(request.POST, request.FILES, instance=profile)
+        profile_form.user = request.user
         if profile_form.is_valid():
             profile_form.save()
-            return redirect('view profile')
+            return redirect('current user profile')
 
         else:
             context = {
