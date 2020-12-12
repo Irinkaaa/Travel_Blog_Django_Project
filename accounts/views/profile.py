@@ -4,13 +4,13 @@ from accounts.forms.profile import ProfileForm
 from app.models import Destination
 
 
-def user_profile(request, pk=None):
+def profile(request, pk=None):
     user = request.user if pk is None else User.objects.get(pk=pk)
     destinations = Destination.objects.filter(user_id=user.id)
     if request.method == 'GET':
         context = {
             'user': user,
-            'profile': user.userprofile,
+            'profile': user.profile,
             'form': ProfileForm(),
             'destinations': destinations,
         }

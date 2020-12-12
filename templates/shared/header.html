@@ -14,10 +14,10 @@
             <li>
                 <a class="nav-link" href="{% url 'destination list' %}">Travel Stories</a>
             </li>
-            <li>
-                <a class="nav-link" href="{% url 'destination create' %}">Add New Story</a>
-            </li>
             {% if user.is_authenticated %}
+                <li>
+                    <a class="nav-link" href="{% url 'destination create' %}">Add New Story</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'current user profile' %}">Welcome {{ user.username }}!</a>
                 </li>

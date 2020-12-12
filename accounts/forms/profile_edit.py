@@ -1,6 +1,9 @@
 from django import forms
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
-from app.models import UserProfile
+from accounts.models import Profile
+
+UserModel = get_user_model()
 
 
 class EditUserCreationForm(forms.ModelForm):
@@ -8,7 +11,7 @@ class EditUserCreationForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
     class Meta:
-        model = User
+        model = UserModel
         fields = '__all__'
 
 
@@ -17,5 +20,5 @@ class EditProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
     class Meta:
-        model = UserProfile
+        model = Profile
         fields = '__all__'

@@ -3,9 +3,7 @@ from django.shortcuts import render, redirect
 from app.forms.create import DestinationFrom
 
 
-# @login_required
 def destination_create(request):
-    user = request.user
     if request.method == 'GET':
         context = {
             'form': DestinationFrom(),

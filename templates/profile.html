@@ -3,8 +3,8 @@
     {% load bootstrap4 %}
     <div class="text-center">
         <h1>Hi, {{ user.username }}!</h1>
-        {% if user.userprofile.profile_image %}
-            <img class="rounded-circle mb-3" src="{{ user.userprofile.profile_image.url }}"
+        {% if user.profile.profile_image %}
+            <img class="rounded-circle mb-3" src="{{ user.profile.profile_image.url }}"
                  alt="Generic placeholder image"
                  width="140"
                  height="140">

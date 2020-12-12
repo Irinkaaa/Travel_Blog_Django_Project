@@ -1,0 +1,35 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    {% load bootstrap4 %}
+    <h1 class="text-center">Edit Your Profile</h1>
+    <hr>
+    <div class="raw d-flex justify-content-center">
+        <form method="post" action="{% url 'view profile' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_field profile_form.first_name %}
+            {% bootstrap_field profile_form.last_name %}
+            {% bootstrap_field profile_form.email %}
+            {% bootstrap_field profile_form.about_me %}
+            {% if user.profile.profile_image %}
+                <img id="img_preview"
+                     src="{{ user.profile.profile_image.url }}"
+                     class="rounded-circle mb-3"
+                     width="140"
+                     height="140"
+                     alt="...">
+            {% else %}
+                <img id="img_preview"
+                     src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                     class="rounded-circle mb-3"
+                     alt="Generic placeholder image"
+                     width="140"
+                     height="140">
+            {% endif %}
+            {% bootstrap_field profile_form.profile_image %}
+            {% buttons %}
+                <button type="submit" class="btn btn-outline-secondary">Edit</button>
+            {% endbuttons %}
+        </form>
+    </div>
+
+{% endblock %}
