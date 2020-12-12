@@ -5,7 +5,7 @@
     <div class="raw d-flex justify-content-center">
         <form method="post" class="post" action="{% url 'signin user' %}">
             {% csrf_token %}
-            {% for field in signin_form %}
+            {% for field in form %}
                 {% bootstrap_field field %}
             {% endfor %}
             {% buttons %}
