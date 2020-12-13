@@ -1,11 +1,11 @@
 from django.urls import path, include
-from accounts.views.profile_edit import edit_profile
-from accounts.views.profile import profile
+from Travel_blog.accounts.views.profile_edit import edit_profile
+from Travel_blog.accounts.views.profile import profile
 # from accounts.views.signin import signin_user
 # from accounts.views.signout import signout_user
-from accounts.views.signout import SignOutView
-from accounts.views.signup import signup_user
-from accounts.views.signin import SignInView
+from Travel_blog.accounts.views.signout import SignOutView
+from Travel_blog.accounts.views.signup import signup_user
+from Travel_blog.accounts.views.signin import SignInView
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),

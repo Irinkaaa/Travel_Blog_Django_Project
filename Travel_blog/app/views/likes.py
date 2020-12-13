@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from app.models import Like, Destination
+from Travel_blog.app.models import Like, Destination
 
 
 def destination_likes(request, pk):

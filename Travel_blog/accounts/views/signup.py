@@ -1,8 +1,8 @@
 from django.contrib.auth import login
 from django.db import transaction
 from django.shortcuts import render, redirect
-from accounts.forms.profile import ProfileForm
-from accounts.forms.signup import SignupForm
+from Travel_blog.accounts.forms.profile import ProfileForm
+from Travel_blog.accounts.forms.signup import SignupForm
 
 
 @transaction.atomic()

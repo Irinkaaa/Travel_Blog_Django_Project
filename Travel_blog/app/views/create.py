@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
-from app.forms.create import DestinationFrom
+from Travel_blog.app.forms.create import DestinationFrom
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from app.models import Destination
+from Travel_blog.app.models import Destination
 
 
 # def destination_create(request):

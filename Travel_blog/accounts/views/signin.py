@@ -1,8 +1,5 @@
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-from accounts.forms.signup import SignupForm
 from django.contrib.auth.views import LoginView
-from accounts.forms.signin import SignInForm
+from Travel_blog.accounts.forms.signin import SignInForm
 
 
 # def signin_user(request):

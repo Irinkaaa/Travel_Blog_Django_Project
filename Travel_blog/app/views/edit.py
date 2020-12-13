@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from app.forms.edit import EditDestinationForm
-from app.models import Destination
+from Travel_blog.app.forms.edit import EditDestinationForm
+from Travel_blog.app.models import Destination
 
 
 def destination_edit(request, pk):

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Destination, Comment
+from Travel_blog.app.models import Destination, Comment
 
 
 class CommentInLine(admin.StackedInline):

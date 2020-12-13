@@ -1,6 +1,5 @@
 from django import forms
-from accounts.models import Profile
-from app.models import Destination
+from Travel_blog.app.models import Destination
 
 
 class DestinationFrom(forms.ModelForm):

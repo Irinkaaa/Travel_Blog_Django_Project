@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from app.forms.delete import DeleteDestinationForm
-from app.models import Destination
+from Travel_blog.app.forms.delete import DeleteDestinationForm
+from Travel_blog.app.models import Destination
 
 
 def destination_delete(request, pk):

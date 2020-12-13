@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
-from accounts.models import Profile
+from Travel_blog.accounts.models import Profile
 
 UserModel = get_user_model()
 

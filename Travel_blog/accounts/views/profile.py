@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from accounts.forms.profile import ProfileForm
-from app.models import Destination
+from Travel_blog.accounts.forms.profile import ProfileForm
+from Travel_blog.app.models import Destination
 
 
 def profile(request, pk=None):

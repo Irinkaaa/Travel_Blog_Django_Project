@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TravelAppConfig(AppConfig):
-    name = 'app'
+    name = 'Travel_blog.app'

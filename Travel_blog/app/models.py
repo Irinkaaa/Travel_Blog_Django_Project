@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-
-from app.validators import year_validator
+from Travel_blog.app.validators import year_validator
 
 UserModel = get_user_model()
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from accounts.forms.profile_edit import EditProfileForm, EditUserCreationForm
-from accounts.models import Profile
+from Travel_blog.accounts.forms.profile_edit import EditProfileForm, EditUserCreationForm
+from Travel_blog.accounts.models import Profile
 
 
 def edit_profile(request):

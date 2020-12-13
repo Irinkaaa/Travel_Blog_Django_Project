@@ -1,5 +1,5 @@
-from app.forms.create import DestinationFrom
-from app.forms.mixin import DisabledFormMixin
+from Travel_blog.app.forms.create import DestinationFrom
+from Travel_blog.app.forms.mixin import DisabledFormMixin
 
 
 class DeleteDestinationForm(DestinationFrom, DisabledFormMixin):

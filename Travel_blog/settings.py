@@ -31,9 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'app',
-    'accounts',
+    'Travel_blog.app',
+    'Travel_blog.accounts',
     'bootstrap4',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

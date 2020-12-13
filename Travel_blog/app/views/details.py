@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from app.forms.comment import CommentForm
-from app.forms.create import DestinationFrom
-from app.models import Destination, Comment
+from Travel_blog.app.forms.comment import CommentForm
+from Travel_blog.app.forms.create import DestinationFrom
+from Travel_blog.app.models import Destination, Comment
 
 
 def destination_details(request, pk):

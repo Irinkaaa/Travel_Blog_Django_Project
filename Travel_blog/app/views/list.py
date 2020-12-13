@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.models import Destination
+from Travel_blog.app.models import Destination
 
 
 def destination_list(request):
