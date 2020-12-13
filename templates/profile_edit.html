@@ -4,7 +4,7 @@
     <h1 class="text-center">Edit Your Profile</h1>
     <hr>
     <div class="raw d-flex justify-content-center">
-        <form method="post" action="{% url 'view profile' %}" enctype="multipart/form-data">
+        <form method="post" action="{% url 'edit profile' %}" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_field profile_form.first_name %}
             {% bootstrap_field profile_form.last_name %}

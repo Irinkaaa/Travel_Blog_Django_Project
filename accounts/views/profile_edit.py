@@ -3,7 +3,7 @@ from accounts.forms.profile_edit import EditProfileForm, EditUserCreationForm
 from accounts.models import Profile
 
 
-def view_profile(request):
+def edit_profile(request):
     user = request.user
     profile = Profile.objects.get(pk=user.id)
     if request.method == 'GET':

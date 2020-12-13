@@ -1,5 +1,5 @@
 from django.urls import path, include
-from accounts.views.profile_edit import view_profile
+from accounts.views.profile_edit import edit_profile
 from accounts.views.profile import profile
 # from accounts.views.signin import signin_user
 # from accounts.views.signout import signout_user
@@ -11,7 +11,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('profile/', profile, name='current user profile'),
     path('profile/<int:pk>/', profile, name='user profile'),
-    path('profile/view/', view_profile, name='view profile'),
+    path('profile/edit/', edit_profile, name='edit profile'),
 
     # function views urls
 

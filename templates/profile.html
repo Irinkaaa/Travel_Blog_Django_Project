@@ -16,7 +16,7 @@
                  height="140">
         {% endif %}
         <div class="w-50 m-auto">
-            <a href="{% url 'view profile' %}">View/Edit your profile</a>
+            <a href="{% url 'edit profile' %}">View/Edit your profile</a>
         </div>
     </div>
     <hr>
@@ -29,7 +29,7 @@
                         <div class="col-lg-4 d-flex align-items-stretch">
                             <div class="card m-3">
                                 <img src="{{ dest.image.url }}" class="card-img-top" alt="...">
-                                <div class="card-body">
+                                <div class="card-body" style="text-align: left">
                                     <h5 class="card-title">{{ dest.title }}</h5>
                                     <p class="card-text">{{ dest.country }}, {{ dest.year }}</p>
                                     <a href="{% url 'destination details' dest.id %}"
