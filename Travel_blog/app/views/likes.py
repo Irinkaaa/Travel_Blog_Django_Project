@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from Travel_blog.app.models import Like, Destination
 

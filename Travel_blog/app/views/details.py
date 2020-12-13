@@ -1,10 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
 from Travel_blog.app.forms.comment import CommentForm
 from Travel_blog.app.forms.create import DestinationFrom
 from Travel_blog.app.models import Destination, Comment
 
 
+@login_required
 def destination_details(request, pk):
     destination = Destination.objects.get(pk=pk)
     if request.method == 'GET':

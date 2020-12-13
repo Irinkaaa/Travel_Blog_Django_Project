@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from Travel_blog.accounts.forms.signin import SignInForm
 
 
+# @login_required
 # def signin_user(request):
 #     if request.method == 'GET':
 #         context = {
